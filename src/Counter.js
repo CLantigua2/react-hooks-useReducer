@@ -8,8 +8,12 @@ function reducer(state, action) {
 			return initialState;
 		case 'increment':
 			return { count: state.count + 1 };
+		case 'incrementByFive':
+			return { count: state.count + 5 };
 		case 'decrement':
 			return { count: state.count - 1 };
+		case 'decrementByFive':
+			return { count: state.count - 5 };
 		default:
 			// A reducer must always return a valid state.
 			// Alternatively you can throw an error if an invalid action is dispatched.
@@ -25,6 +29,8 @@ function Counter({ initialCount }) {
 			<button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
 			<button onClick={() => dispatch({ type: 'increment' })}>+</button>
 			<button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+			<button onClick={() => dispatch({ type: 'incrementByFive' })}>+ 5</button>
+			<button onClick={() => dispatch({ type: 'decrementByFive' })}>- 5</button>
 		</div>
 	);
 }
